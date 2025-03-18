@@ -6,7 +6,7 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [titleIndex, setTitleIndex] = useState(0);
-  const titles = ['<Code>', '<Create>', '<Elevate>'];
+  const titles = ['<Code.>', '<Create.>', '<Elevate.>'];
   
   const sectionRefs = {
     about: useRef<HTMLElement>(null),
@@ -194,9 +194,10 @@ function App() {
                 <h3 className="text-xl font-semibold">Full Stack Developer</h3>
               </div>
               <p className="text-gray-400">
-                With over 5 years of experience in web development, I specialize in creating
-                scalable applications using modern technologies. My passion lies in solving
-                complex problems and delivering exceptional user experiences.
+              With 3+ years of hands-on experience in full stack development, I build robust, responsive, and scalable web applications. 
+              My approach blends clean code, thoughtful design, and efficient backend architecture to deliver seamless user experiences. 
+              Passionate about continuous learning, I actively integrate emerging technologies and best practices to solve real-world problems and bring ideas to life.
+              My passion lies in solving complex problems and delivering exceptional user experiences.
               </p>
               <div className="flex flex-wrap gap-3">
                 {['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker'].map((skill) => (
@@ -212,7 +213,7 @@ function App() {
             <div className="relative animate-float">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-xl shadow-purple-500/10 hover:shadow-purple-500/20 transition-shadow duration-300">
                 <img 
-                  src="https://images.unsplash.com/photo-1596778402543-00146d446fac?auto=format&fit=crop&q=80&w=800" 
+                  src="./images/Developer.jpg" 
                   alt="Developer at work"
                   className="object-cover w-full h-full scale-on-hover"
                 />
@@ -277,13 +278,13 @@ function App() {
             <div className="grid gap-8">
               <div className="flex items-center space-x-4 group hover-lift">
                 <Mail className="w-6 h-6 text-purple-400 group-hover:text-purple-300 transition-colors" />
-                <a href="mailto:contact@example.com" className="text-gray-400 hover:text-white transition-colors">
-                  contact@example.com
+                <a href="mailto:b.jellah@lybotics.com" className="text-gray-400 hover:text-white transition-colors">
+                  b.jellah@lybotics.com
                 </a>
               </div>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/ThatBaz" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-700/50 rounded-full hover:bg-purple-600/20 transition-all duration-300 hover-lift"
@@ -291,7 +292,7 @@ function App() {
                   <Github className="w-6 h-6" />
                 </a>
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/barryjellah/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-700/50 rounded-full hover:bg-purple-600/20 transition-all duration-300 hover-lift"
@@ -308,7 +309,7 @@ function App() {
       <footer className="py-6 border-t border-gray-800">
         <div className="container mx-auto px-6">
           <div className="text-center text-gray-400">
-            © {new Date().getFullYear()} DevPortfolio. All rights reserved.
+            © {new Date().getFullYear()} Baz-Dev. All rights reserved.
           </div>
         </div>
       </footer>
