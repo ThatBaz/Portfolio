@@ -6,7 +6,7 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [titleIndex, setTitleIndex] = useState(0);
-  const titles = ['< Code. >', '< Create. >', '< Elevate. >'];
+  const titles = ['< Code >', '< Create >', '< Elevate >'];
   
   const sectionRefs = {
     about: useRef<HTMLElement>(null),
@@ -71,10 +71,10 @@ function App() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "E-Commerce Furniture Platform",
       description: "A full-stack e-commerce solution with real-time inventory management",
       image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800",
-      tech: ["React", "Node.js", "PostgreSQL"]
+      tech: ["WooCommerce", "PHP", "JavaScript", "MySQL", "AWS"],
     },
     {
       title: "AI Task Manager",
@@ -118,7 +118,7 @@ function App() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent hover-lift">
-              DevPortfolio
+              Barry-Dev
             </div>
             <div className="flex space-x-8">
               {['hero', 'about', 'projects', 'contact'].map((section) => (
