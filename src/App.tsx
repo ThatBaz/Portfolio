@@ -6,7 +6,7 @@ function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [titleIndex, setTitleIndex] = useState(0);
-  const titles = ['<Code.>', '<Create.>', '<Elevate.>'];
+  const titles = ['< Code. >', '< Create. >', '< Elevate. >'];
   
   const sectionRefs = {
     about: useRef<HTMLElement>(null),
@@ -213,8 +213,8 @@ function App() {
             <div className="relative animate-float">
               <div className="aspect-square rounded-2xl overflow-hidden shadow-xl shadow-purple-500/10 hover:shadow-purple-500/20 transition-shadow duration-300">
                 <img 
-                  src="./images/Developer.jpg" 
-                  alt="Developer at work"
+                  src="https://github.com/ThatBaz/Portfolio/blob/main/src/images/Developer.JPG?raw=true" 
+                  alt="Barry Jellah"
                   className="object-cover w-full h-full scale-on-hover"
                 />
               </div>
