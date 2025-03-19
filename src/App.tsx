@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code2, Briefcase, User2, Mail, ChevronDown, ExternalLink, Github, Linkedin } from 'lucide-react';
+import { Code2, ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 function App() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -138,49 +139,106 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-pink-900/20 animate-gradient" />
-        <div className="absolute inset-0 backdrop-blur-[100px]" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="mb-6 h-[80px] flex items-center justify-center">
-              <h1 
-                key={titleIndex}
-                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent typing-text"
-              >
-                {titles[titleIndex]}
-              </h1>
-            </div>
-            <p 
-              className={`text-xl text-gray-400 mb-8 ${
-                isVisible ? 'animate-fade-in-up animate-delay-100' : 'opacity-0'
-              }`}
-            >
-              Crafting digital experiences that make a difference
-            </p>
-            <div 
-              className={`flex justify-center space-x-4 ${
-                isVisible ? 'animate-fade-in-up animate-delay-200' : 'opacity-0'
-              }`}
-            >
-              <button 
-                onClick={() => handleNavClick('contact')}
-                className="bg-purple-600 hover:bg-purple-700 px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-              >
-                Get in Touch
-              </button>
-              <button 
-                onClick={() => handleNavClick('projects')}
-                className="border border-purple-600 px-8 py-3 rounded-full hover:bg-purple-600/10 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25"
-              >
-                View Work
-              </button>
-            </div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-gray-900"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(76,29,149,0.1),transparent_50%)]"></div>
+          
+          {/* Animated background elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-purple-400/20"
+                initial={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * window.innerHeight,
+                }}
+                animate={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * window.innerHeight,
+                  scale: [1, 2, 1],
+                  opacity: [0.2, 0.5, 0.2],
+                }}
+                transition={{
+                  duration: Math.random() * 10 + 10,
+                  repeat: Infinity,
+                  ease: "linear",
+                }}
+              />
+            ))}
+          </div>
+          
+          {/* Gradient mesh */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5"></div>
+            <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-pink-500/5 via-transparent to-transparent"></div>
           </div>
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-6 h-6 text-gray-400" />
-        </div>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-4 text-center z-10"
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-8"
+          >
+            <div className="w-24 h-24 mx-auto mb-6 relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+              <div className="absolute inset-1 bg-gray-900 rounded-full flex items-center justify-center">
+                <Code2 className="w-12 h-12 text-purple-400" />
+              </div>
+            </div>
+          </motion.div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-400">
+            {titles[titleIndex]}
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-gray-300">
+            Full Stack Developer | Web Designer | AI Enthusiast
+          </p>
+          <div className="flex gap-4 justify-center">
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-all relative group overflow-hidden"
+              onClick={() => handleNavClick('contact')}
+            >
+              <span className="relative z-10">Let's Work Together</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+            </motion.button>
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 border border-purple-600 hover:bg-purple-600/20 rounded-lg transition-all relative group overflow-hidden"
+              onClick={() => handleNavClick('projects')}
+            >
+              <span className="relative z-10">View My Work</span>
+              <div className="absolute inset-0 bg-purple-600/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+            </motion.button>
+          </div>
+        </motion.div>
+
+        {/* Scroll indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="w-6 h-10 border-2 border-purple-400 rounded-full p-1">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              className="w-2 h-2 bg-purple-400 rounded-full"
+            ></motion.div>
+          </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
